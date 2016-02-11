@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 
 import Adaptor from '../src';
-const { execute, event } = Adaptor;
+const { execute, person } = Adaptor;
 
 import request from 'superagent';
 import superagentMock from 'superagent-mock';
@@ -42,7 +42,7 @@ describe("execute", () => {
   })
 })
 
-describe("event", () => {
+describe("person", () => {
   let mockRequest
 
   before(() => {
@@ -52,21 +52,21 @@ describe("event", () => {
   it("posts to API and returns state", () => {
     let state = {
       configuration: {
-        username: "demo",
-        password: "Demo1234",
-        apiUrl: 'http://build.openhmisafrica.org/openmrs2/ws/rest/'
+        username: "admin",
+        password: "Admin123",
+        apiUrl: 'http://demo.openmrs.org/openmrs'
       }
     };
 
     return execute(
-      event(fixtures.event.requestBody)
+      person(fixtures.person.requestBody)
     )(state)
     .then((state) => {
       let lastReference = state.references[0]
 
-      // Check that the eventData made it's way to the request as a string.
+      // Check that the personData made it's way to the request as a string.
       expect(lastReference.params).
-        to.eql(JSON.stringify(fixtures.event.requestBody))
+        to.eql(JSON.stringify(fixtures.person.requestBody))
 
     })
 

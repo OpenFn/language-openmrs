@@ -17,19 +17,19 @@ describe("Client", () => {
   describe("post", () => {
 
     it("sends a payload to OpenMRS", () => {
-      let body = fixtures.event.requestBody;
+      let body = fixtures.person.requestBody;
       let username = 'admin';
-      let password = 'district';
-      let url = 'http://build.openhmisafrica.org/openmrs2/ws/rest/person/';
+      let password = 'Admin123';
+      let url = 'http://demo.openmrs.org/openmrs/ws/rest/v1/person';
 
       return post({ body, username, password, url }).then((result) => {
-        expect(result.body).to.eql(fixtures.event.responseBody)
+        expect(result.body).to.eql(fixtures.person.responseBody)
 
         // Check that basic auth is being used.
         expect(result.headers).
           to.eql({
             "Accept": "application/json",
-            "Authorization": "Basic YWRtaW46ZGlzdHJpY3Q=",
+            "Authorization": "Basic YWRtaW46QWRtaW4xMjM=",
             "Content-Type": "application/json",
           })
 

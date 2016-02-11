@@ -36,7 +36,7 @@ export function execute(...operations) {
  * @param {object} personData - Payload data for the person
  * @returns {Operation}
  */
-export function person(eventData) {
+export function person(personData) {
 
   return state => {
     const body = expandReferences(personData)(state);
