@@ -5,7 +5,7 @@ import { resolve as resolveUrl } from 'url';
 /**
  * Execute a sequence of operations.
  * Wraps `language-common/execute`, and prepends initial state for OpenMRS.
- * @example 
+ * @example
  * execute(
  *   create('foo'),
  *   delete('bar')
@@ -27,25 +27,55 @@ export function execute(...operations) {
 }
 
 /**
- * Create an event
- * @example 
+ * Create a person
+ * @example
  * execute(
- *   event(data)
+ *   person(data)
  * )(state)
  * @constructor
- * @param {object} eventData - Payload data for the event
+ * @param {object} personData - Payload data for the person
  * @returns {Operation}
  */
-export function event(eventData) {
+export function person(eventData) {
 
   return state => {
-    const body = expandReferences(eventData)(state);
+    const body = expandReferences(personData)(state);
 
     const { username, password, apiUrl } = state.configuration;
 
-    const url = resolveUrl(apiUrl + '/', 'api/events')
+    const url = resolveUrl(apiUrl + '/', 'ws/rest/v1/person')
 
-    console.log("Posting event:");
+    console.log("Posting person:");
+
+    return post({ username, password, body, url })
+    .then((result) => {
+      console.log("Success:", result);
+      return { ...state, references: [ result, ...state.references ] }
+    })
+
+  }
+}
+
+/**
+ * Create a patient
+ * @example
+ * execute(
+ *   patient(data)
+ * )(state)
+ * @constructor
+ * @param {object} patientData - Payload data for the event
+ * @returns {Operation}
+ */
+export function patient(patientData) {
+
+  return state => {
+    const body = expandReferences(patientData)(state);
+
+    const { username, password, apiUrl } = state.configuration;
+
+    const url = resolveUrl(apiUrl + '/', 'ws/rest/v1/patient')
+
+    console.log("Posting person:");
 
     return post({ username, password, body, url })
     .then((result) => {
