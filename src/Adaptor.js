@@ -63,7 +63,7 @@ export function person(personData) {
  *   patient(data)
  * )(state)
  * @constructor
- * @param {object} patientData - Payload data for the event
+ * @param {object} patientData - Payload data for the patient
  * @returns {Operation}
  */
 export function patient(patientData) {
