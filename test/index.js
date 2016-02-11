@@ -54,7 +54,7 @@ describe("person", () => {
       configuration: {
         username: "admin",
         password: "Admin123",
-        apiUrl: 'http://demo.openmrs.org/openmrs'
+        instanceUrl: 'http://demo.openmrs.org/openmrs'
       }
     };
 

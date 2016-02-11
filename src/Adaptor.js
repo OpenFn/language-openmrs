@@ -41,9 +41,9 @@ export function person(personData) {
   return state => {
     const body = expandReferences(personData)(state);
 
-    const { username, password, apiUrl } = state.configuration;
+    const { username, password, instanceUrl } = state.configuration;
 
-    const url = resolveUrl(apiUrl + '/', 'ws/rest/v1/person')
+    const url = resolveUrl(instanceUrl + '/', 'ws/rest/v1/person')
 
     console.log("Posting person:");
 
@@ -71,9 +71,9 @@ export function patient(patientData) {
   return state => {
     const body = expandReferences(patientData)(state);
 
-    const { username, password, apiUrl } = state.configuration;
+    const { username, password, instanceUrl } = state.configuration;
 
-    const url = resolveUrl(apiUrl + '/', 'ws/rest/v1/patient')
+    const url = resolveUrl(instanceUrl + '/', 'ws/rest/v1/patient')
 
     console.log("Posting person:");
 
