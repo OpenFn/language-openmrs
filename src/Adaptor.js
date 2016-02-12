@@ -46,7 +46,7 @@ export function person(personData) {
     const url = resolveUrl(instanceUrl + '/', 'ws/rest/v1/person')
 
     console.log("Posting person:");
-    console.log(body);
+    console.log(JSON.stringify(body));
 
     return post({ username, password, body, url })
     .then((result) => {
