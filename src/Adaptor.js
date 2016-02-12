@@ -76,7 +76,8 @@ export function patient(patientData) {
 
     const url = resolveUrl(instanceUrl + '/', 'ws/rest/v1/patient')
 
-    console.log("Posting person:");
+    console.log("Posting patient:");
+    console.log(JSON.stringify(body))
 
     return post({ username, password, body, url })
     .then((result) => {
