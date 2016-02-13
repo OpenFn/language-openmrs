@@ -90,5 +90,5 @@ export function patient(patientData) {
 
 export {
   field, fields, sourceValue,
-  merge, dataPath, dataValue, lastReferenceValue
+  merge, dataPath, dataValue, lastReferenceValue, arrayToString
 } from 'language-common';
