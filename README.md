@@ -7,6 +7,22 @@ the [OpenMRS API](https://wiki.openmrs.org/display/docs/API).
 Documentation
 -------------
 
+## Create a new person
+```js
+person({
+ name: dataValue(form.name),
+ date_of_birth: dataValue(form.dob)
+})
+```
+
+## Create a new patient
+```js
+patient({
+ name: dataValue(form.name),
+ date_of_birth: dataValue(form.dob)
+})
+```
+
 [Docs](docs/index)
 
 
