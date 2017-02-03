@@ -4,6 +4,8 @@ Language OpenMRS
 Language Pack for building expressions and operations for working with
 the [OpenMRS API](https://wiki.openmrs.org/display/docs/API).
 
+[OpenMRS Data Model Explorer](http://burkeware.com/openmrs-data-model/openmrs-data-model-1.11.html#)
+
 Documentation
 -------------
 
