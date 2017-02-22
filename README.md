@@ -1,5 +1,5 @@
-Language OpenMRS
-==============
+Language OpenMRS [![Build Status](https://travis-ci.org/OpenFn/language-openmrs.svg?branch=master)](https://travis-ci.org/OpenFn/language-openmrs)
+================
 
 Language Pack for building expressions and operations for working with
 the [OpenMRS API](https://wiki.openmrs.org/display/docs/API).
