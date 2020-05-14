@@ -1,15 +1,32 @@
-Language OpenMRS [![Build Status](https://travis-ci.org/OpenFn/language-openmrs.svg?branch=master)](https://travis-ci.org/OpenFn/language-openmrs)
-================
+# Language OpenMRS [![Build Status](https://travis-ci.org/OpenFn/language-openmrs.svg?branch=master)](https://travis-ci.org/OpenFn/language-openmrs)
 
 Language Pack for building expressions and operations for working with
 the [OpenMRS API](https://wiki.openmrs.org/display/docs/API).
 
 [OpenMRS Data Model Explorer](http://burkeware.com/openmrs-data-model/openmrs-data-model-1.11.html#)
 
-Documentation
--------------
+## Documentation
 
-## Create new person
+### Get a patient by some criteria
+
+```js
+// getPatient({ uuid: '516af9aa-0402-4e11-ad79-e394fdec0c91' });
+// getPatient({ uuid: dataValue('patientId')(state) });
+getPatient({
+  uuid: (state) => state.data[0].uuid,
+});
+```
+
+### Make a request to any OpenMRS endpoint
+
+```js
+req({ method: 'GET', url: '/ws/rest/v1/concept' }, (state) => {
+  console.log(JSON.stringify(state, null, 2));
+  return state;
+});
+```
+
+<!-- ## Create new person
 
 ```js
 person(
@@ -39,13 +56,9 @@ patient(
     })
   )
 )
-```
+``` -->
 
-[Docs](docs/index)
-
-
-Development
------------
+## Development
 
 Clone the repo, run `npm install`.
 
