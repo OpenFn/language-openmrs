@@ -16,6 +16,33 @@ getPatient({
   uuid: (state) => state.data[0].uuid,
 });
 ```
+#### Example of searching for patients based on their `EMR Id`
+```js
+getPatients(
+  {
+    identifier: state => state.data.emrId,
+    v: 'full',
+  },
+  {
+    exactlyOne: true,
+  }
+);
+```
+### Create an Encounter
+```js
+createEncounter({
+  encounterDatetime: dataValue('visit_date'), //dynamically fill with source app data
+  patient: dataValue('uuid'), 
+  encounterType: dataValue('visit_type'),
+  location: dataValue('location.uuid'),
+  encounterProviders: [
+    {
+      provider: dataValue('provider_name'),
+      encounterRole: '240b26f9-dd88-4172-823d-4a8bfeb7841f', //hardcoded value
+    },
+  ],
+});
+```
 
 ### Make a request to any OpenMRS endpoint
 
@@ -40,7 +67,7 @@ person(
     })
   )
 )
-```
+```-->
 
 ## Create new patient
 
@@ -56,7 +83,8 @@ patient(
     })
   )
 )
-``` -->
+``` 
+
 
 ## Development
 
