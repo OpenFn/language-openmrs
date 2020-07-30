@@ -198,15 +198,15 @@ export function getPatients(criteria, options) {
 }
 
 /**
- * Gets patients matching criteria
+ * Gets people matching criteria
  * @example
  * execute(
- *   getPatients(
+ *   getPeople(
  *   { identifier: '007' },
  *   { exactlyOne: true }
  * )(state)
  * @constructor
- * @param {object} criteria - Criteria object for the patient
+ * @param {object} criteria - Criteria object for the people
  * @param {object} options - Options object for the handling of responses
  * @returns {Operation}
  */
