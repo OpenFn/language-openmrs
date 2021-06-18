@@ -1,6 +1,6 @@
 {
   "name": "@openfn/language-openmrs",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "OpenMRS Language Pack for OpenFn",
   "main": "lib/index.js",
   "scripts": {
