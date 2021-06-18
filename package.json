@@ -2,6 +2,11 @@
   "name": "@openfn/language-openmrs",
   "version": "0.9.1",
   "description": "OpenMRS Language Pack for OpenFn",
+  "homepage": "https://docs.openfn.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openfn/language-openmrs.git"
+  },
   "main": "lib/index.js",
   "scripts": {
     "build": "node_modules/.bin/babel src -d lib && npm run ast",
