@@ -7,6 +7,16 @@ the [OpenMRS API](https://wiki.openmrs.org/display/docs/API).
 
 ## Documentation
 
+### Sample configuration
+
+```json
+{
+  "instanceUrl": "http://openmrs.com/instance/url",
+  "username": "admin@openmrs",
+  "password": "supersecretopenmrspassword"
+}
+```
+
 ### Get a patient by some criteria
 
 ```js
