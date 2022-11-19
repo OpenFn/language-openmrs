@@ -1,4 +1,9 @@
-# Language OpenMRS [![Build Status](https://travis-ci.org/OpenFn/language-openmrs.svg?branch=master)](https://travis-ci.org/OpenFn/language-openmrs)
+# _⚠️ MOVED TO [OpenFn/adaptors](https://github.com/OpenFn/adaptors)! ⚠️_
+
+**N.B.: New versions are available at:
+https://github.com/OpenFn/adaptors/tree/main/packages/openmrs**
+
+# Language OpenMRS (Archived) [![Build Status](https://travis-ci.org/OpenFn/language-openmrs.svg?branch=master)](https://travis-ci.org/OpenFn/language-openmrs)
 
 Language Pack for building expressions and operations for working with
 the [OpenMRS API](https://wiki.openmrs.org/display/docs/API).
